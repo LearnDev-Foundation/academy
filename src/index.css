@@ -2,6 +2,15 @@
 
 @tailwind base;
 @tailwind components;
+
+button[type='submit'] {
+    background-color: #e05142;
+}
+
+button[type='submit']:hover {
+    background-color: rgba(224, 81, 66, 0.7)
+}
+
 @tailwind utilities;
 
 :root {
@@ -18,8 +27,4 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-}
-
-a {
-    text-decoration: none;
 }

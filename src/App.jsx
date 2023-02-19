@@ -8,7 +8,7 @@ import './App.scss';
 
 const App = () => {
   return (
-    <div classname="app">
+    <div className="app">
       <HashRouter>
         <Routes>
           <Route element={<Home />} path="/" exact />
