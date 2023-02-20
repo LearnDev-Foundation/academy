@@ -1,3 +1,8 @@
+.app__username {
+    font-family: var(--font-lora);
+    background: var(--color-green);
+}
+
 .app__username-glass {
     background: rgba(255, 255, 255, 0.55);
     border-radius: 16px;
@@ -18,11 +23,6 @@
 }
 
 .app__username-btn {
-    background-color: #e05142;
     @apply border w-3/4 py-4 rounded-lg text-gray-50 text-xl shadow-sm text-center;
-
-    :hover {
-        background-color: rgba(224, 81, 66, 0.4);
-    }
 }
 

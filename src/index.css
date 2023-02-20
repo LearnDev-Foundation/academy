@@ -20,6 +20,10 @@ button[type='submit']:hover {
 
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-green: #2a6350;
+    --color-yellow: #f2be4b;
+    --color-lightblue: #8cb9c4;
+    --color-gray: #eaeaea;
 }
 
 * {
