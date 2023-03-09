@@ -36,7 +36,7 @@ const Register = () => {
     <div>
       <div className="app__register container mx-auto">
 
-      <Toaster position='top-center' reverseOrder={false}></Toaster>
+      <Toaster position='bottom-center' reverseOrder={false}></Toaster>
 
         <div className='flex justify-center items-center h-screen'>
           <div className="app__register-glass" style={{ width: "45%", paddingTop: '3em'}}>
@@ -58,9 +58,9 @@ const Register = () => {
                 </div>
 
                 <div className="textbox flex flex-col items-center gap-6">
-                    <input {...formik.getFieldProps('email')} className="app__register-textbox" type="text" placeholder='Email' />
+                    <input {...formik.getFieldProps('email')} className="app__register-textbox" type="email" placeholder='Email' />
                     <input {...formik.getFieldProps('username')} className="app__register-textbox" type="text" placeholder='Username' />
-                    <input {...formik.getFieldProps('password')} className="app__register-textbox" type="text" placeholder='Password' />
+                    <input {...formik.getFieldProps('password')} className="app__register-textbox" type="password" placeholder='Password' />
                     <button className='app__register-btn' type='submit'>Register</button>
                 </div>
 
