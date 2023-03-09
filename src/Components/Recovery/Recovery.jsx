@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { images } from '../../Constants';
 import { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
-import { passwordValidate } from '../../helpers/validate';
+import { otpValidate } from '../../helpers/validate';
 
 import "./Recovery.scss";
 
@@ -11,9 +11,9 @@ const Recovery = () => {
 
   const formik = useFormik({
     initialValues: {
-      password : 'password'
+      otp : ''
     },
-    validate: passwordValidate,
+    validate: otpValidate,
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async values => {
@@ -43,7 +43,7 @@ const Recovery = () => {
                     <span className="py-4 text-sm text-left text-gray-500">
                       Enter 6 digit OTP sent to your email address.
                     </span>
-                    <input {...formik.getFieldProps('password')} type="text" className="app__recovery-textbox" placeholder='OTP' />
+                    <input {...formik.getFieldProps('otp')} type="digits" className="app__recovery-textbox" placeholder='OTP' />
                   </div>
                   <button className='app__recovery-btn' type="submit">Recover</button>
                 </div>
