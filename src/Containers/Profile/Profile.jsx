@@ -1,38 +1,61 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { images } from '../../Constants';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 import { useFormik } from 'formik';
 import { profileValidation } from '../../helpers/validate';
 import convertToBase64 from '../../helpers/convert';
+import { useNavigate } from 'react-router-dom';
+import { updateUser } from '../../helpers/helper';
+import { useAuthStore } from '../../store/store';
+import useFetch from '../../hooks/fetch.hook';
 
 import './Profile.scss';
 
 const Profile = () => {
 
   const [file, setFile] = useState();
+  const { username } = useAuthStore(state => state.auth);
+  const navigate = useNavigate();
+  const data = useFetch(username);
 
   const formik = useFormik({
     initialValues : {
-      firstName: '',
-      lastname : '',
-      username : '',
-      email : '',
-      twitter : '',
-      linkedin : '',
-      github : '',
+      firstName: data?.firstName || '',
+      lastName : data?.lastName || '',
+      username : data?.username || '',
+      email : data?.email || '',
+      twitter : data?.twitter || '',
+      linkedin : data?.linkedin ||  '',
+      github : data?.github || '',
     },
     enableReinitialize : true,
     validate : profileValidation,
     validateOnBlur : false,
     validateOnChange : false,
     onSubmit : async values => {
-      console.log(values)
+      let updatePromise = updateUser(values);
+
+      toast.promise(updatePromise, {
+        loading: 'Updating...',
+        success: <b>Update Successful</b>,
+        error: <b>Could not process update</b>
+      })
+
+      updatePromise.then(res => {
+        navigate('/academy')
+      })
     }
   })
 
   const onUpload = async e => {
     const base64 = await convertToBase64(e.target.files[0]);
     setFile(base64);
+  }
+
+  const userLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/');
   }
 
   return (
@@ -44,19 +67,17 @@ const Profile = () => {
         <div className="app__profile-glass" style={{ width: "45%", paddingTop: '3em'}}>
 
           <div className="title flex flex-col items-center">
-            <h4 className='text-5xl font-bold'>Register</h4>
+            <h4 className='text-5xl font-bold'>Profile</h4>
             <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-                Register to join the academy
+                Update your profile
             </span>
           </div>
 
           <form onSubmit={formik.handleSubmit} className="py-1">
             <div className='profile flex justify-center py-4'>
                 <label htmlFor="profile">
-                  <img src={file || images.avatar} className="app__register-profileimg" alt="avatar" />
+                  <img src={images.avatar} className="app__register-profileimg" alt="avatar" />
                 </label>
-                
-                <input onChange={onUpload} type="file" id='profile' name='profile' />
             </div>
 
             <div className="textbox flex flex-col items-center gap-6">
@@ -77,6 +98,10 @@ const Profile = () => {
 
               <input {...formik.getFieldProps('github')} className="app__profile-textbox" type='text' placeholder='Github' />
               <button className="app__profile-btn" type='submit'>Update</button>
+
+              <div className="text-center py-4">
+                <span className='text-gray-500'><Link className='text-red-500' to="/academy">Skip</Link> </span>
+              </div>
 
             </div>
 

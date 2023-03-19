@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import CookieConsent from 'react-cookie-consent';
-import { Home, Profile } from "./Containers";
+import { Home, Profile, Academy } from "./Containers";
 import { PageNotFound, Password, Recovery, Register, Reset, Username } from "./Components";
 
 import './App.scss';
@@ -19,6 +19,7 @@ const App = () => {
           <Route element={<Recovery/>} path="/recovery" />
           <Route element={<Reset/>} path="/reset" />
           <Route element={<Username/>} path="/username" />
+          <Route element={<Academy/>} path="/academy" />
         </Routes>
       </HashRouter>
 
