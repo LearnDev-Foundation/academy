@@ -33,8 +33,9 @@ export async function resetPasswordValidation(values){
 
 export async function registerValidation(values) {
     const errors = usernameVerify({}, values);
-    passwordVerify(errors, values);
     emailVerify(errors, values);
+    passwordVerify(errors, values);
+    confirmPasswordVerify(errors, values);
 
     return errors;
 }
@@ -56,6 +57,16 @@ const passwordVerify = (errors = {}, values) => {
         errors.password = toast.error("Password must be at least 8 character");
     } else if (!specialChars.test(values.password)) {
         errors.password = toast.error("Password must have special characters");
+    }
+
+    return errors
+}
+
+const confirmPasswordVerify = (errors = {}, values) => {
+    if (!values.confirmPassword) {
+        errors.confirmPassword = toast.error("Confirm Password Required!!");
+    } else if (values.confirmPassword !== values.password) {
+        errors.confirmPassword = toast.error("Passwords do not match");
     }
 
     return errors

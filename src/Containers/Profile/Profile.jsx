@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { images } from '../../Constants';
 import toast, { Toaster } from 'react-hot-toast';
 import { useFormik } from 'formik';
 import { profileValidation } from '../../helpers/validate';
-import convertToBase64 from '../../helpers/convert';
 import { useNavigate } from 'react-router-dom';
 import { updateUser } from '../../helpers/helper';
 import { useAuthStore } from '../../store/store';
@@ -48,14 +47,9 @@ const Profile = () => {
     }
   })
 
-  const onUpload = async e => {
-    const base64 = await convertToBase64(e.target.files[0]);
-    setFile(base64);
-  }
-
-  const userLogout = () => {
+  function userLogout(){
     localStorage.removeItem('token');
-    navigate('/');
+    navigate('/')
   }
 
   return (
@@ -106,7 +100,7 @@ const Profile = () => {
             </div>
 
             <div className="text-center py-4">
-              <button className='text-red-500' to="/">Logout</button>
+              <button className='text-red-500' onClick={userLogout}>Logout</button>
             </div>
           </form>
 
