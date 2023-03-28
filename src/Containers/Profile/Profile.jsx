@@ -13,7 +13,6 @@ import './Profile.scss';
 
 const Profile = () => {
 
-  const [file, setFile] = useState();
   const { username } = useAuthStore(state => state.auth);
   const navigate = useNavigate();
   const data = useFetch(username);
