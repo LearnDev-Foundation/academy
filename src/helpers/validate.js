@@ -21,6 +21,12 @@ export async function passwordValidate(values){
     return errors;
 }
 
+export async function otpValidate(values){
+    const errors = otpVerify({}, values);
+
+    return errors;
+}
+
 export async function resetPasswordValidation(values){
     const errors = passwordVerify({}, values);
 
@@ -59,7 +65,17 @@ const passwordVerify = (errors = {}, values) => {
         errors.password = toast.error("Password must have special characters");
     }
 
-    return errors
+    return errors;
+}
+
+const otpVerify = (errors = {}, values) => {
+    if (!values.otp) {
+        errors.otp = toast.error("OTP Required!!");
+    } else if (values.otp.length !== 6) {
+        errors.otp = toast.error("OTP must be 6 digit");
+    }
+
+    return errors;
 }
 
 const confirmPasswordVerify = (errors = {}, values) => {
@@ -79,7 +95,7 @@ const usernameVerify = (errors = {}, values) => {
         errors.username = toast.error('Username cannot contain space!!');
     }
 
-    return errors
+    return errors;
 }
 
 const emailVerify = (errors = {}, values) => {
@@ -91,5 +107,5 @@ const emailVerify = (errors = {}, values) => {
         errors.email = toast.error("Invalid email address...!")
     }
 
-    return errors
+    return errors;
 }

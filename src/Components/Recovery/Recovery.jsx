@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useAuthStore } from "../../store/store";
 import { generateOTP, verifyOTP } from '../../helpers/helper';
 import { useNavigate } from 'react-router-dom';
+
 import "./Recovery.scss";
 
 const Recovery = () => {
