@@ -1,36 +1,43 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { images } from '../../Constants';
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import { registerValidation } from '../../helpers/validate';
-import convertToBase64 from '../../helpers/convert';
+import { registerUser } from '../../helpers/helper';
+import axios from 'axios';
 
 import './Register.scss';
 
 const Register = () => {
 
   const [file, setFile] = useState();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
       email: '',
       username: '',
-      password : ''
+      password : '',
+      confirmPassword : ''
     },
     validate: registerValidation,
     validateOnBlur: false,
     validateOnChange: false,
     onSubmit: async values => {
-      values = await Object.assign(values, {profile : file || ''})
-      console.log(values)
+      axios.post('http://localhost:8080/api/register', values)
+        .then(response => {
+          toast.success(response?.data?.message);
+          registerUser(values)
+          navigate('/username');
+        })
+        .catch(error => {
+          if(error.response.status === 409){
+            toast.error(error?.response?.data?.message)
+          }
+        })
     }
   })
-
-  const onUpload = async e => {
-    const base64 = await convertToBase64(e.target.files[0]);
-    setFile(base64);
-  }
 
   return (
     <div>
@@ -51,16 +58,15 @@ const Register = () => {
             <form className='py-1' onSubmit={formik.handleSubmit}>
                 <div className='profile flex justify-center py-4'>
                     <label htmlFor="profile">
-                      <img src={file || images.avatar} className="app__register-profileimg" alt="avatar" />
+                      <img src={images.avatar} className="app__register-profileimg" alt="avatar" />
                     </label>
-                    
-                    <input onChange={onUpload} type="file" id='profile' name='profile' />
                 </div>
 
                 <div className="textbox flex flex-col items-center gap-6">
                     <input {...formik.getFieldProps('email')} className="app__register-textbox" type="email" placeholder='Email' />
                     <input {...formik.getFieldProps('username')} className="app__register-textbox" type="text" placeholder='Username' />
                     <input {...formik.getFieldProps('password')} className="app__register-textbox" type="password" placeholder='Password' />
+                    <input {...formik.getFieldProps('confirmPassword')} className="app__register-textbox" type="password" placeholder='Confirm Password' />
                     <button className='app__register-btn' type='submit'>Register</button>
                 </div>
 

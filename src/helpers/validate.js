@@ -1,7 +1,16 @@
 import toast from 'react-hot-toast';
+import { authenticate } from './helper';
 
 export async function usernameValidate(values) {
     const errors = usernameVerify({}, values);
+
+    if(values.username){
+        const { status } = await authenticate(values.username);
+
+        if( status != 200){
+            errors.exist = toast.error("Username doesn't exist")
+        }
+    }
 
     return errors;
 }
@@ -30,8 +39,9 @@ export async function resetPasswordValidation(values){
 
 export async function registerValidation(values) {
     const errors = usernameVerify({}, values);
-    passwordVerify(errors, values);
     emailVerify(errors, values);
+    passwordVerify(errors, values);
+    confirmPasswordVerify(errors, values);
 
     return errors;
 }
@@ -66,6 +76,16 @@ const otpVerify = (errors = {}, values) => {
     }
 
     return errors;
+}
+
+const confirmPasswordVerify = (errors = {}, values) => {
+    if (!values.confirmPassword) {
+        errors.confirmPassword = toast.error("Confirm Password Required!!");
+    } else if (values.confirmPassword !== values.password) {
+        errors.confirmPassword = toast.error("Passwords do not match");
+    }
+
+    return errors
 }
 
 const usernameVerify = (errors = {}, values) => {
