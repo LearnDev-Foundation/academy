@@ -5,7 +5,6 @@ import { resetPasswordValidation } from '../../helpers/validate';
 import { resetPassword } from '../../helpers/helper';
 import { useAuthStore } from '../../store/store';
 import { useNavigate, Navigate } from 'react-router-dom';
-import useFetch from '../../hooks/fetch.hook';
 
 import "./Reset.scss";
 

@@ -14,12 +14,12 @@ const App = () => {
         <Routes>
           <Route element={<Home />} path="/" exact />
           <Route element={<Register />} path="/register" />
-          <Route element={<AuthorizeUser><Profile /></AuthorizeUser>} path="/profile" />
           <Route element={<PageNotFound/>} path="*" />
+          <Route element={<Username/>} path="/username" />
           <Route element={<ProtectRoute><Password/></ProtectRoute>} path="/password" />
           <Route element={<ProtectRoute><Recovery /></ProtectRoute>} path="/recovery" />
           <Route element={<ProtectRoute><Reset /></ProtectRoute>} path="/reset" />
-          <Route element={<Username/>} path="/username" />
+          <Route element={<AuthorizeUser><Profile /></AuthorizeUser>} path="/profile" />
           <Route element={<AuthorizeUser><Academy /></AuthorizeUser>} path="/academy" />
         </Routes>
       </HashRouter>
