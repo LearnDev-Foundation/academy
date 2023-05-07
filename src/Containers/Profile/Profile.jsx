@@ -8,14 +8,17 @@ import { useNavigate } from 'react-router-dom';
 import { updateUser } from '../../helpers/helper';
 import { useAuthStore } from '../../store/store';
 import useFetch from '../../hooks/fetch.hook';
+import jwt_decode from 'jwt-decode';
 
 import './Profile.scss';
 
 const Profile = () => {
-
-  const { username } = useAuthStore(state => state.auth);
   const navigate = useNavigate();
-  const data = useFetch(username);
+
+  const token = localStorage.getItem('token');
+  const decoded = jwt_decode(token);
+
+  const data = useFetch(decoded.user);
 
   const formik = useFormik({
     initialValues : {
