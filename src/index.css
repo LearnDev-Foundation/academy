@@ -1,29 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Lora:wght@400;700&family=Roboto:wght@700&display=swap');
-
-@tailwind base;
-@tailwind components;
-
-button[type='submit'] {
-    background-color: #e05142;
-}
-
-button[type='submit']:hover {
-    background-color: rgba(224, 81, 66, 0.7)
-}
-
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-    --font-spartan: 'League Spartan', sans-serif;
-    --font-lora: 'Lora', serif;
-    --font-roboto: 'Roboto', sans-serif;
-
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-green: #2a6350;
-    --color-yellow: #f2be4b;
-    --color-lightblue: #8cb9c4;
-    --color-gray: #eaeaea;
+    --font-inter: 'Inter', sans-serif;
 }
 
 * {
