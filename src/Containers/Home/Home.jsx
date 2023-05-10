@@ -1,10 +1,36 @@
 import React from "react";
-import { Navbar } from "../../Components";
+import { Navbar, Blog, Newsletter, Footer } from "../../Components";
 import { Link } from "react-router-dom";
+import topics from "../Academy/data/topics.json";
 
 import "./Home.scss";
 
 const Home = () => {
+	const items = [];
+
+	let count = 0;
+	for (const topic in topics) {
+		// eslint-disable-next-line no-prototype-builtins
+		if (topics.hasOwnProperty(topic)) {
+			const obj = topics[topic];
+			items.push(
+				<div className="app__learn_topic" key={obj.slug}>
+					<div className="app__learn_topic-heading">
+						<h3>{obj.topic}</h3>
+						<Link>Start Learning</Link>
+					</div>
+					<div className="app__learn_topic-description">
+						<p>{obj.description}</p>
+					</div>
+				</div>
+			);
+			count++;
+			if (count === 4) {
+				break;
+			}
+		}
+	}
+
 	return (
 		<div>
 			<Navbar />
@@ -15,6 +41,13 @@ const Home = () => {
 					<Link to="/academy">Get Started</Link>
 				</div>
 			</div>
+			<div className="app__learn">
+				<div className="content">{items}</div>
+				<Link>Explore</Link>
+			</div>
+			<Blog />
+			<Newsletter />
+			<Footer />
 		</div>
 	);
 };
