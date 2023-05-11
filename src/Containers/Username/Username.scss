@@ -1,28 +1,175 @@
 .app__username {
-    font-family: var(--font-lora);
-    background: var(--color-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    min-height: 80vh;
 }
 
-.app__username-glass {
-    background: rgba(255, 255, 255, 0.55);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px #4747470b;
-    backdrop-filter: blur(7.1px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    @apply border-4 border-gray-50 shrink-0 h-3/4 w-[30%] rounded-3xl py-20 px-7 min-w-max;
+.app__username_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding: 30px 20px;
+
+    border: 1px solid #3C3C43;
+    border-radius: 20px;
+    gap: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        align-self: stretch;
+
+        p {
+            font-family: var(--font-poppins);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #666;
+        }
+
+        input {
+            border: 1px solid #66666659;
+            border-radius: 12px;
+            align-self: stretch;
+            padding: 15px;
+
+            font-family: var(--font-poppins);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #666;
+        }
+
+        button {
+            background: #000;
+            opacity: 0.9;
+            border-radius: 40px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: stretch;
+
+            font-family: var(--font-poppins);
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            color: #fff;
+
+            cursor: pointer;
+        }
+    }
 }
 
-.app__username-profileimg {
-    @apply border-4 border-gray-100 w-[135px] rounded-full shadow-lg cursor-pointer;
-    @apply hover:border-gray-200;
+.app__username_content-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    h3 {
+        font-family: var(--font-poppins);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        color: #333;
+    }
+
+    p {
+        font-family: var(--font-poppins);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        color: #333;
+
+        a {
+            color: #333;
+            text-decoration: underline;
+        }
+    }
 }
 
-.app__username-textbox {
-    @apply border-0 px-5 py-4 rounded-xl w-3/4 shadow-sm text-lg;
-    @apply focus:outline-none;
-}
+.app__username_content-stepper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 70px;
 
-.app__username-btn {
-    @apply border w-3/4 py-4 rounded-lg text-gray-50 text-xl shadow-sm text-center;
-}
+    .one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 3px;
 
+        .number {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #333;
+
+            p {
+                font-family: var(--font-poppins);
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                color: #fff;
+            }
+        }
+
+        p {
+            font-family: var(--font-poppins);
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            color: #333;
+        }
+    }
+
+    .two {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        gap: 3px;
+
+        .number {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #33333380;
+
+            p {
+                font-family: var(--font-poppins);
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+                color: #fff;
+            }
+        }
+
+        p {
+            font-family: var(--font-poppins);
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            color: #33333380;
+        }
+    }
+}
