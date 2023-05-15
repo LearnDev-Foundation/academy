@@ -1,69 +1,79 @@
-import React from 'react';
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
-import { resetPasswordValidation } from '../../helpers/validate';
-import { resetPassword } from '../../helpers/helper';
-import { useAuthStore } from '../../store/store';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { resetPasswordValidation } from "../../helpers/validate";
+import { resetPassword } from "../../helpers/helper";
+import { useAuthStore } from "../../store/store";
+import { useNavigate } from "react-router-dom";
+import { Navbar, Footer } from "../../Components";
+import passwordeye from "../../assets/icon.svg";
 
 import "./Reset.scss";
 
 const Reset = () => {
+	const [passwordType, setPasswordType] = useState("password");
 
-  const { username } = useAuthStore(state => state.auth);
-  const navigate = useNavigate();
+	const { username } = useAuthStore(state => state.auth);
+	const navigate = useNavigate();
 
-  const formik = useFormik({
-    initialValues: {
-      password : '',
-      confirm_pwd: ''
-    },
-    validate: resetPasswordValidation,
-    validateOnBlur: false,
-    validateOnChange: false,
-    onSubmit: async values => {
-      let resetPromise = resetPassword({ username, password : values.password })
+	const formik = useFormik({
+		initialValues: {
+			password : "",
+			confirm_pwd: ""
+		},
+		validate: resetPasswordValidation,
+		validateOnBlur: false,
+		validateOnChange: false,
+		onSubmit: async values => {
+			let resetPromise = resetPassword({ username, password : values.password });
 
-      toast.promise(resetPromise, {
-        loading: 'Updating...',
-        success: <b>Password Reset Successful</b>,
-        error: <b>Could not reset password</b>
-      });
+			toast.promise(resetPromise, {
+				loading: "Updating...",
+				success: <b>Password Reset Successful</b>,
+				error: <b>Could not reset password</b>
+			});
 
-      resetPromise.then(function(){ navigate('/password') })
-    }
-  })
+			resetPromise.then(function(){ navigate("/password"); });
+		}
+	});
 
-  return (
-    <div>
+	const click = (e) => {
+		e.preventDefault();
+		if (passwordType === "password") {
+			setPasswordType("text");
+		} else {
+			setPasswordType("password");
+		}
+	};
 
-      <div className='app__reset container mx-auto'>
-
-        <Toaster position='bottom-center' reverseOrder={false}></Toaster>
-
-        <div className="flex justify-center items-center h-screen">
-            
-            <div className='app__reset-glass'>
-
-              <div className="title flex flex-col items-center">
-                <h4 className="text-5xl font-bold">Reset Password</h4>
-                <span className="py-4 text-xl w-2/3 text-center text-gray-500">Enter new password</span>
-              </div>
-
-              <form action="" className="pt-20" onSubmit={formik.handleSubmit}>
-                <div className="textbox flex flex-col items-center gap-6">
-                  <input {...formik.getFieldProps('password')} type="Password" className="app__reset-textbox" placeholder='New Password' />
-                  <input {...formik.getFieldProps('confirm_pwd')} type="Password" className="app__reset-textbox" placeholder='Confirm Password' />
-                  <button className='app__reset-btn' type="submit">Reset</button>
-                </div>
-              </form>
-
-            </div>
-
-        </div>
-      </div>
-    </div>
-  )
-}
+	return (
+		<div>
+			<Navbar />
+			<Toaster position='bottom-center' reverseOrder={false}></Toaster>
+			<div className="app__reset">
+				<div className="app__reset_content">
+					<div className="app__reset_content-title">
+						<h3>Reset Password</h3>
+						<p>Enter new password</p>
+					</div>
+					<form action="" onSubmit={formik.handleSubmit}>
+						<div className="top">
+							<p>Enter Your Password:</p>
+							<div className="hide" onClick={click}>
+								<img src={passwordeye} alt="" />
+								{passwordType === "password" ? <p>Show</p> : <p>Hide</p> }
+							</div>
+						</div>
+						<input {...formik.getFieldProps("password")} type={passwordType} placeholder='New Password' />
+						<p>Confirm Password:</p>
+						<input {...formik.getFieldProps("confirm_pwd")} type={passwordType} placeholder='Confirm Password' />
+						<button type="submit">Reset</button>
+					</form>
+				</div>
+			</div>
+			<Footer />
+		</div>
+	);
+};
 
 export default Reset;
