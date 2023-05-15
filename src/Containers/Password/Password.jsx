@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
@@ -12,10 +12,20 @@ import passwordeye from "../../assets/icon.svg";
 import "./Password.scss";
 
 const Password = () => {
+	const [passwordType, setPasswordType] = useState("password");
 
 	const navigate = useNavigate();
 	const { username } = useAuthStore(state => state.auth);
 	const data = useFetch(username);
+
+	const click = (e) => {
+		e.preventDefault();
+		if (passwordType === "password") {
+			setPasswordType("text");
+		} else {
+			setPasswordType("password");
+		}
+	};
 
 	const formik = useFormik({
 		initialValues: {
@@ -68,12 +78,12 @@ const Password = () => {
 					<form action="" onSubmit={formik.handleSubmit}>
 						<div className="top">
 							<p>Enter Your Password:</p>
-							<div className="hide">
+							<div className="hide" onClick={click}>
 								<img src={passwordeye} alt="" />
-								<p>Hide</p>
+								{passwordType === "password" ? <p>Show</p> : <p>Hide</p> }
 							</div>
 						</div>
-						<input {...formik.getFieldProps("password")} type="Password" placeholder='Password' />
+						<input {...formik.getFieldProps("password")} type={passwordType} placeholder='Password' />
 						<button type="submit">Sign In</button>
 						<p>Forgot Pasword? <Link to="/recovery">Password Recovery</Link> </p>
 					</form>
