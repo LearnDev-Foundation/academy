@@ -1,34 +1,163 @@
 .app__profile {
-    font-family: var(--font-lora);
-    background: var(--color-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 100px;
+    min-height: 80vh;
+    gap: 20px;
+
+    a, button {
+        background: #111;
+        border-radius: 40px;
+        border: none;
+        padding: 15px 40px;
+
+        font-family: var(--font-poppins);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        color: #fff;
+
+        cursor: pointer;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 1100px) {
+        padding: 30px 24px;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 20px;
+    }
 }
 
-.app__profile-glass {
-    background: rgba(255, 255, 255, 0.55);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px #4747470b;
-    backdrop-filter: blur(7.1px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    @apply border-4 border-gray-50 shrink-0 h-3/4 w-[30%] rounded-3xl py-20 px-7 min-w-max;
-    @apply h-5/6 w-5/6;
+.app__profile_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    h3 {
+        font-family: var(--font-poppins);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 50px;
+        color: #333;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 40px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 30px;
+        }
+    }
+
+    p {
+        font-family: var(--font-poppins);
+        font-style: normal;
+        font-weight: 400px;
+        font-size: 30px;
+        color: #333;
+
+        @media screen and (max-width: 110px) {
+            font-size: 25px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 20px;
+        }
+    }
 }
 
-.app__profile-profileimg {
-    @apply border-4 border-gray-100 w-[135px] rounded-full shadow-lg cursor-pointer;
-    @apply hover:border-gray-200;
-    @apply w-40 cursor-pointer;
-}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 
-.app__profile-textbox {
-    @apply border-0 px-5 py-4 rounded-xl w-3/4 shadow-sm text-lg;
-    @apply focus:outline-none;
-    @apply w-3/4;
-}
+    .pair {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 10px;
 
-.app__profile-btn {
-    @apply border w-3/4 py-4 rounded-lg text-gray-50 text-xl shadow-sm text-center;
-}
+        .input {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            align-items: center;
+            justify-content: center;
 
-input[type='file'] {
-    display: none;
+            h6 {
+                font-family: var(--font-poppins);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                color: #666;
+                align-self: flex-start;
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 14px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    font-size: 12px;
+                }
+            }
+
+            input {
+                box-sizing: border-box;
+                border: 1px solid #66666659;
+                align-self: stretch;
+                border-radius: 12px;
+                padding: 15px 20px;
+
+                font-family: var(--font-poppins);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                color: #333;
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 16px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    font-size: 14px;
+                    padding: 10px 15px;
+                }
+            }
+
+            button {
+                background: #111;
+                border-radius: 40px;
+                border: none;
+                padding: 15px 40px;
+                align-self: stretch;
+
+                font-family: var(--font-poppins);
+                font-style: normal;
+                font-weight: 500;
+                font-size: 22px;
+                color: #fff;
+
+                @media screen and (max-width: 1100px) {
+                    font-size: 18px;
+                }
+
+                @media screen and (max-width: 576px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
 }

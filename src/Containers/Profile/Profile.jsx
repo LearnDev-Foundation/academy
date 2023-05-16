@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
-import { images } from "../../Constants";
 import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
 import { profileValidation } from "../../helpers/validate";
 import { useNavigate } from "react-router-dom";
 import { updateUser } from "../../helpers/helper";
+import { Navbar, Footer } from "../../Components";
 import useFetch from "../../hooks/fetch.hook";
 import jwt_decode from "jwt-decode";
 
@@ -14,10 +15,11 @@ import "./Profile.scss";
 const Profile = () => {
 	const navigate = useNavigate();
 
-	const token = localStorage.getItem("token");
-	const decoded = jwt_decode(token);
+	// const token = localStorage.getItem("token");
+	// const decoded = jwt_decode(token);
 
-	const data = useFetch(decoded.user);
+	// const data = useFetch(decoded.user);
+	const data = "";
 
 	const formik = useFormik({
 		initialValues : {
@@ -54,60 +56,59 @@ const Profile = () => {
 	}
 
 	return (
-		<div className='container mx-auto app__profile'>
-
+		<div>
+			<Navbar />
 			<Toaster position='bottom-center' reverseOrder={false}></Toaster>
-
-			<div className="flex justify-center items-center h-screen">
-				<div className="app__profile-glass" style={{ width: "45%", paddingTop: "3em"}}>
-
-					<div className="title flex flex-col items-center">
-						<h4 className='text-5xl font-bold'>Profile</h4>
-						<span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-                Update your profile
-						</span>
-					</div>
-
-					<form onSubmit={formik.handleSubmit} className="py-1">
-						<div className='profile flex justify-center py-4'>
-							<label htmlFor="profile">
-								<img src={images.avatar} className="app__register-profileimg" alt="avatar" />
-							</label>
-						</div>
-
-						<div className="textbox flex flex-col items-center gap-6">
-							<div className="name flex gap-10 w-3/4">
-								<input {...formik.getFieldProps("firstName")} className="app__profile-textbox" type='text' placeholder='First Name' />
-								<input {...formik.getFieldProps("lastName")} className="app__profile-textbox" type='text' placeholder='Last Name' />
-							</div>
-
-							<div className="name flex gap-10 w-3/4">
-								<input {...formik.getFieldProps("username")} className="app__profile-textbox" type='text' placeholder='Username' />
-								<input {...formik.getFieldProps("email")} className="app__profile-textbox" type='email' placeholder='Email Address' />
-							</div>
-
-							<div className="name flex gap-10 w-3/4">
-								<input {...formik.getFieldProps("twitter")} className="app__profile-textbox" type='text' placeholder='Twitter' />
-								<input {...formik.getFieldProps("linkedin")} className="app__profile-textbox" type='text' placeholder='Linkedin' />
-							</div>
-
-							<input {...formik.getFieldProps("github")} className="app__profile-textbox" type='text' placeholder='Github' />
-							<button className="app__profile-btn" type='submit'>Update</button>
-
-							<div className="text-center py-4">
-								<span className='text-gray-500'><Link className='text-red-500' to="/academy">Skip</Link> </span>
-							</div>
-
-						</div>
-
-						<div className="text-center py-4">
-							<button className='text-red-500' onClick={userLogout}>Logout</button>
-						</div>
-					</form>
-
+			<div className="app__profile">
+				<div className="app__profile_heading">
+					<h3>Profile</h3>
+					<p>Update your profile</p>
 				</div>
+				<form onSubmit={formik.handleSubmit}>
+					<div className="pair">
+						<div className="input">
+							<h6>First Name</h6>
+							<input {...formik.getFieldProps("firstName")} type='text' />
+						</div>
+						<div className="input">
+							<h6>Last Name</h6>
+							<input {...formik.getFieldProps("lastName")} type='text' />
+						</div>
+					</div>
+					<div className="pair">
+						<div className="input">
+							<h6>Username</h6>
+							<input {...formik.getFieldProps("username")} type='text' />
+						</div>
+						<div className="input">
+							<h6>Email</h6>
+							<input {...formik.getFieldProps("email")} type='email' />
+						</div>
+					</div>
+					<div className="pair">
+						<div className="input">
+							<h6>Twitter</h6>
+							<input {...formik.getFieldProps("twitter")} type='text' placeholder='https://' />
+						</div>
+						<div className="input">
+							<h6>Linkedin</h6>
+							<input {...formik.getFieldProps("linkedin")} type='text' placeholder='https://' />
+						</div>
+					</div>
+					<div className="pair">
+						<div className="input">
+							<h6>Github</h6>
+							<input {...formik.getFieldProps("github")} type='text' placeholder='https://' />
+						</div>
+						<div className="input">
+							<button type='submit'>Update</button>
+						</div>
+					</div>
+				</form>
+				<Link to="/academy">Skip</Link>
+				<button onClick={userLogout}>Logout</button>
 			</div>
-
+			<Footer />
 		</div>
 	);
 };
