@@ -1,86 +1,143 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
-import { images } from '../../Constants';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
-import { registerValidation } from '../../helpers/validate';
-import { registerUser } from '../../helpers/helper';
-import axios from 'axios';
+import { registerValidation } from "../../helpers/validate";
+import { registerUser } from "../../helpers/helper";
+import axios from "axios";
+import { Navbar, Footer } from "../../Components";
+import logo from "../../assets/logo.svg";
+import passwordEye from "../../assets/icon.svg";
 
-import './Register.scss';
+import "./Register.scss";
 
 const Register = () => {
+	const [passwordType, setPasswordType] = useState("password");
+	const [isChecked, setIsChecked] = useState(true);
 
-  const [file, setFile] = useState();
-  const navigate = useNavigate();
+	const subscribeUrl = import.meta.env.VITE_FORM_URL;
 
-  const formik = useFormik({
-    initialValues: {
-      email: '',
-      username: '',
-      password : '',
-      confirmPassword : ''
-    },
-    validate: registerValidation,
-    validateOnBlur: false,
-    validateOnChange: false,
-    onSubmit: async values => {
-      axios.post('http://localhost:8080/api/register', values)
-        .then(response => {
-          toast.success(response?.data?.message);
-          registerUser(values)
-          navigate('/username');
-        })
-        .catch(error => {
-          if(error.response.status === 409){
-            toast.error(error?.response?.data?.message)
-          }
-        })
-    }
-  })
+	const navigate = useNavigate();
 
-  return (
-    <div>
-      <div className="app__register container mx-auto">
 
-      <Toaster position='bottom-center' reverseOrder={false}></Toaster>
 
-        <div className='flex justify-center items-center h-screen'>
-          <div className="app__register-glass" style={{ width: "45%", paddingTop: '3em'}}>
+	const formik = useFormik({
+		initialValues: {
+			email: "",
+			username: "",
+			password : "",
+			confirmPassword : ""
+		},
+		validate: registerValidation,
+		validateOnBlur: false,
+		validateOnChange: false,
+		onSubmit: async values => {
+			const formData = new FormData();
+			formData.append("email_address", values.email);
 
-            <div className="title flex flex-col items-center">
-              <h4 className='text-5xl font-bold'>Register</h4>
-              <span className='py-4 text-xl w-2/3 text-center text-gray-500'>
-                  Register to join the academy
-              </span>
-            </div>
+			// for (let pair of formData.entries()) {
+			// 	console.log(pair[0] + ": " + pair[1]);
+			// }
 
-            <form className='py-1' onSubmit={formik.handleSubmit}>
-                <div className='profile flex justify-center py-4'>
-                    <label htmlFor="profile">
-                      <img src={images.avatar} className="app__register-profileimg" alt="avatar" />
-                    </label>
-                </div>
+			if (isChecked) {
+				try {
+					const response = await fetch(subscribeUrl, {
+						method: "POST",
+						body: formData,
+						headers: {
+							accept: "application/json",
+						}
+					});
+					const json = await response.json();
+        
+					if (json.status === "success") {
+						toast.success("You Subscribed to our Newsletter");
+					}
+				} catch (err) {
+					console.error("Oops! Something went wrong. Please try again later.");
+				}
+			}
 
-                <div className="textbox flex flex-col items-center gap-6">
-                    <input {...formik.getFieldProps('email')} className="app__register-textbox" type="email" placeholder='Email' />
-                    <input {...formik.getFieldProps('username')} className="app__register-textbox" type="text" placeholder='Username' />
-                    <input {...formik.getFieldProps('password')} className="app__register-textbox" type="password" placeholder='Password' />
-                    <input {...formik.getFieldProps('confirmPassword')} className="app__register-textbox" type="password" placeholder='Confirm Password' />
-                    <button className='app__register-btn' type='submit'>Register</button>
-                </div>
+			axios.post("http://localhost:8080/api/register", values)
+				.then(response => {
+					toast.success(response?.data?.message);
+					registerUser(values);
+					navigate("/username");
+				})
+				.catch(error => {
+					if(error.response.status === 409){
+						toast.error(error?.response?.data?.message);
+					}
+				});
+		}
+	});
 
-                <div className="text-center py-4">
-                  <span className='text-gray-500'>Already Register? <Link className='text-red-500' to="/username">Login Now</Link></span>
-                </div>
+	const clickhandler = (e) => {
+		e.preventDefault();
+		if(passwordType === "password"){
+			setPasswordType("text");
+		} else {
+			setPasswordType("password");
+		}
+	};
 
-            </form>
+	const handleCheckChange = () => {
+		setIsChecked(!isChecked);
+	};
 
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+	return (
+		<div>
+			<Navbar />
+			<Toaster position='bottom-center' reverseOrder={false}></Toaster>
+			<div className="app__register">
+				<div className="app__register_content">
+					<div className="app__register_content-heading">
+						<h3>Start Your Journey</h3>
+						<p>Get access to lot’s of community contributed resources</p>
+					</div>
+					<img src={logo} alt="" />
+				</div>
+				<form onSubmit={formik.handleSubmit}>
+					<h3>Sign up now</h3>
+					<div className="inputs">
+						<div className="input-field">
+							<h6>Email address</h6>
+							<input {...formik.getFieldProps("email")} type="email" />
+						</div>
+						<div className="input-field">
+							<h6>Username</h6>
+							<input {...formik.getFieldProps("username")} type="text" />
+						</div>
+						<div className="input-field">
+							<div className="top">
+								<h6>Password</h6>
+								<div className="hide" onClick={clickhandler}>
+									<img src={passwordEye} alt="" />
+									{passwordType === "password" ? <p>Show</p> : <p>Hide</p>}
+								</div>
+							</div>
+							<input {...formik.getFieldProps("password")} type={passwordType} />
+							<p>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+						</div>
+						<div className="input-field">
+							<h6>Confirm Password</h6>
+							<input {...formik.getFieldProps("confirmPassword")} type={passwordType} />
+						</div>
+					</div>
+					<p>By creating an account, you agree to our <a href="https://learndevfoundation.vercel.app/#/tos" target="_blank" rel="noreferrer">Terms of Service</a> and <a href="https://learndevfoundation.vercel.app/#/privacy" target="_blank" rel="noreferrer">Privacy Policy</a> </p>
+					<div className="checkbox">
+						<input type="checkbox" name="subscribe" id="subscribe" checked={isChecked} onChange={handleCheckChange}/>
+						<p>Subscribe to receive updates and wonderful tech tips.</p>
+					</div>
+					<div className="bottom">
+						<button type='submit'>Sign Up</button>
+						<p>Already have an account? <Link to="/username">Log in</Link></p>
+					</div>
+				</form>
+			</div>
+			<Footer />
+		</div>
+	);
+};
 
-export default Register
+export default Register;
