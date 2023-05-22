@@ -20,9 +20,9 @@ const App = () => {
 					<Route element={<ProtectRoute><Recovery /></ProtectRoute>} path="/recovery" />
 					<Route element={<ProtectRoute><Reset /></ProtectRoute>} path="/reset" />
 					<Route element={<AuthorizeUser><Profile /></AuthorizeUser>} path="/profile" />
-					<Route element={<Academy />} path="/academy" />
-					<Route element={<Chapters />} path="/academy/:slug" />
-					<Route element={<Content />} path="/learn/:slug" />
+					<Route element={<AuthorizeUser><Academy /></AuthorizeUser>} path="/academy" />
+					<Route element={<AuthorizeUser><Chapters /></AuthorizeUser>} path="/academy/:slug" />
+					<Route element={<AuthorizeUser><Content /></AuthorizeUser>} path="/learn/:slug" />
 				</Routes>
 			</HashRouter>
 

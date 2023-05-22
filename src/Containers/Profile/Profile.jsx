@@ -15,11 +15,10 @@ import "./Profile.scss";
 const Profile = () => {
 	const navigate = useNavigate();
 
-	// const token = localStorage.getItem("token");
-	// const decoded = jwt_decode(token);
+	const token = localStorage.getItem("token");
+	const decoded = jwt_decode(token);
 
-	// const data = useFetch(decoded.user);
-	const data = "";
+	const data = useFetch(decoded.user);
 
 	const formik = useFormik({
 		initialValues : {

@@ -58,7 +58,7 @@ const Register = () => {
 				}
 			}
 
-			axios.post("http://localhost:8080/api/register", values)
+			axios.post("https://vast-jade-shrimp-hem.cyclic.app/api/register", values)
 				.then(response => {
 					toast.success(response?.data?.message);
 					registerUser(values);

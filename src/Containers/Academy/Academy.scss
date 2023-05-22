@@ -1,0 +1,119 @@
+.app__academy {
+    width: 100%;
+    min-height: 80vh;
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media screen and (max-width: 1100px) {
+        padding: 30px 24px;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 20px;
+    }
+    
+    h4 {
+        font-size: 30px;
+        font-family: var(--font-poppins);
+        font-weight: 500;
+        font-style: normal;
+        color: #333;
+
+        @media screen and (max-width: 1100px){
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 18px;
+        }
+    }
+}
+
+.app__academy_learn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    gap: 10px;
+}
+
+.app__academy_learn-topic {
+    width: 30%;
+    padding: 20px 30px;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @media screen and (max-width: 1100px) {
+        padding: 15px 20px;
+        width: 40%;
+    }
+
+    @media screen and (max-width: 576px) {
+        padding: 10px 15px;
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-family: var(--font-poppins);
+        font-weight: 500;
+        font-style: normal;
+        color: #fff;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 18px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 16px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        font-family: var(--font-poppins);
+        font-weight: 400;
+        font-style: normal;
+        color: #fff;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 12px;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        font-family: var(--font-poppins);
+        font-weight: 400;
+        font-style: normal;
+        background: #fff;
+        color: #000;
+        width: fit-content;
+
+        padding: 10px;
+        border-radius: 30px;
+        text-decoration: none;
+
+        @media screen and (max-width: 1100px) {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 576px) {
+            font-size: 12px;
+        }
+    }
+}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../../../Components";
+import { Navbar, Footer } from "../../../Components";
 import { useLocation, Link } from "react-router-dom";
+
+import "./Chapters.scss";
 
 const Chapters = () => {
 	const location = useLocation();
@@ -33,13 +35,13 @@ const Chapters = () => {
 						const item = chapters[key];
 						return (
 							<li key={key}>
-								<h3>{item.title}</h3>
-								<Link to={`/learn/${item.title}`} state={{ data: item.file }}>Learn</Link>
+								<Link to={`/learn/${item.title}`} state={{ data: item.file }}>{item.title}</Link>
 							</li>
 						);
 					})}
 				</ol>
 			</div>
+			<Footer />
 		</div>
 	);
 };

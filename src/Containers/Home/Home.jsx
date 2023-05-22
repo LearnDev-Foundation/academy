@@ -43,7 +43,7 @@ const Home = () => {
 			</div>
 			<div className="app__learn">
 				<div className="content">{items}</div>
-				<Link>Explore</Link>
+				<Link to="/academy">Explore</Link>
 			</div>
 			<Blog />
 			<Newsletter />

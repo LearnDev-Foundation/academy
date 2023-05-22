@@ -4,7 +4,11 @@
     "chapters": {
         "1": {
             "title": "Introduction To HTML",
-            "file": "Html/introduction"
+            "file": "html/introduction"
+        },
+        "2": {
+            "title": "HTML Basics",
+            "file": "html/basics"
         }
     }
 }
