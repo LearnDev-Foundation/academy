@@ -1,0 +1,10 @@
+{
+    "name": "HTML",
+    "description": "Master the language used to create websites and develop a strong foundation in web development.",
+    "chapters": {
+        "1": {
+            "title": "Introduction To HTML",
+            "file": "Html/introduction"
+        }
+    }
+}

@@ -4,6 +4,7 @@ import CookieConsent from "react-cookie-consent";
 import { Home, Profile, Academy } from "./Containers";
 import { Password, Recovery, Register, Reset, Username } from "./Containers";
 import { ProtectRoute, AuthorizeUser } from "./middleware/auth";
+import { Chapters, Content } from "./Containers/Academy";
 
 import "./App.scss";
 
@@ -19,7 +20,9 @@ const App = () => {
 					<Route element={<ProtectRoute><Recovery /></ProtectRoute>} path="/recovery" />
 					<Route element={<ProtectRoute><Reset /></ProtectRoute>} path="/reset" />
 					<Route element={<AuthorizeUser><Profile /></AuthorizeUser>} path="/profile" />
-					<Route element={<AuthorizeUser><Academy /></AuthorizeUser>} path="/academy" />
+					<Route element={<Academy />} path="/academy" />
+					<Route element={<Chapters />} path="/academy/:slug" />
+					<Route element={<Content />} path="/learn/:slug" />
 				</Routes>
 			</HashRouter>
 

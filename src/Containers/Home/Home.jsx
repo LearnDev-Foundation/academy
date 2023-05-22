@@ -1,7 +1,7 @@
 import React from "react";
 import { Navbar, Blog, Newsletter, Footer } from "../../Components";
 import { Link } from "react-router-dom";
-import topics from "../Academy/data/topics.json";
+import topics from "../../assets/data/topics.json";
 
 import "./Home.scss";
 
@@ -17,7 +17,7 @@ const Home = () => {
 				<div className="app__learn_topic" key={obj.slug}>
 					<div className="app__learn_topic-heading">
 						<h3>{obj.topic}</h3>
-						<Link>Start Learning</Link>
+						<Link to={`/academy/${obj.slug}`} state={{ data: obj.chapterList }}>Start Learning</Link>
 					</div>
 					<div className="app__learn_topic-description">
 						<p>{obj.description}</p>
