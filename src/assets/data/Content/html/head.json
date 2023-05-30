@@ -1,0 +1,56 @@
+{
+    "title": "The Head Tag",
+    "content": {
+        "p1": {
+            "text": "The <head> element is a container for metadata (data about data) and is placed between the <html> tag and the <body> tag. HTML metadata is data about the HTML document. Metadata is not displayed. Metadata typically define the document title, character set, styles, scripts, and other meta information."
+        },
+        "p2": {
+            "text": "The head tag usually contains the following elements: <title>, <style>, <meta>, <link>, <script>, <noscript>, and <base>."
+        },
+        "p3": {
+            "heading": "The <title> Element",
+            "text": "The <title> element is required in all HTML documents and it defines the title of the document. The <title> element is placed inside the <head> element. The content of a <title> element is shown in the browser's title bar or in the page's tab. They are also used by search engines to determine the page's topic. Try the code below to see the title tag in action:",
+            "codeblock": "36bd25d2fa59ce6c2ac93e336b9d9593"
+        },
+        "p4": {
+            "heading": "The <style> Element",
+            "text": "The <style> element is used to define style information for an HTML document. Inside the <style> element you specify how HTML elements should render in a browser. Each HTML document can contain multiple <style> tags. Styles defined inside a <style> element are not displayed. They are used to format the document.",
+            "codeblock": "f2ec6e11629101f818b6226e17083286"
+        },
+        "p5": {
+            "heading": "The <meta> Element",
+            "text": "The <meta> element is used to specify metadata about an HTML document. Metadata is data (information) about data. The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable. Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata. The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services. HTML5 introduced a method to let web designers take control over the viewport (the user's visible area of a web page), through the <meta> tag. Here are a few examples of meta tags:",
+            "codeblock": "af32a0c616e207ad66f45a1e3079df5d"
+        },
+        "p6": {
+            "text": "Of all the meta tags listed above, only a few of them are very commonly used. The most common meta tags are: <meta charset>, <meta name=\"description\">, <meta name=\"keywords\">, <meta name=\"author\">, <meta http-equiv=\"refresh\">, and <meta name=\"viewport\">."
+        },
+        "p7": {
+            "heading": "The <link> Element",
+            "text": "The <link> element is used to link external resources to an HTML document. The <link> element is an empty element, it contains attributes only. The <link> tag is used to link to external style sheets. The <link> element can also be used to define a favicon (a small icon displayed in the browser address bar, or in the page's tab).",
+            "codeblock": "57fb3747107c80c6e4757dc5da626fb4"
+        },
+        "p8": {
+            "heading": "The <script> Element",
+            "text": "The <script> element is used to define client-side JavaScripts. The <script> element either contains scripting statements, or it points to an external script file through the src attribute. Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content. The <script> element can also be used with other languages, such as VBScript (Internet Explorer), and Java. The <script> element is placed in the <head> or <body> section of an HTML document. Scripts are executed in the browser.",
+            "codeblock": "509965b5486310bc3d6d652708cca4ad"
+        },
+        "p9": {
+            "heading": "The <noscript> Element",
+            "text": "The <noscript> element defines an alternate content for users that have disabled scripts in their browser or have a browser that doesn't support script. The <noscript> element can be used in both <head> and <body>.",
+            "codeblock": "69b5c80d49c163dbfaf66c5838ec2b07"
+        },
+        "p10": {
+            "text": "In this example We set an element with the no-script-alert class to display if scripts are disabled, as it was display: none by default"
+        },
+        "p11": {
+            "heading": "The <base> Element",
+            "text": "The <base> element specifies the base URL and/or target for all relative URLs in a page. The <base> element must have either an href or a target attribute present, or both. The <base> element must appear only once in the document, and it must be inside the <head> element. The <base> tag is useful when you want to use relative URLs to point to resources that are in the same base location as the current page. The <base> tag is also useful when you want to point to a default target for all your links, or a default location for all your images.",
+            "codeblock": "ba56315157b01c80fba0f3b5dee272c7"
+        },
+        "p12": {
+            "heading": "Summary",
+            "text": "The <head> element is a container for metadata (data about data) and is placed between the <html> tag and the <body> tag. HTML metadata is data about the HTML document. Metadata is not displayed. Metadata typically define the document title, character set, styles, scripts, and other meta information. The head tag usually contains the following elements: <title>, <style>, <meta>, <link>, <script>, <noscript>, and <base>."
+        }
+    }
+}

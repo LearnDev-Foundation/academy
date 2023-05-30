@@ -1,0 +1,20 @@
+{
+    "title": "HTML Forms",
+    "content": {
+        "p1": {
+            "text": "HTML forms provide a means for users to interact with websites, input data, and perform various actions. They play a crucial role in collecting user information, facilitating user registrations, enabling search functionality, and much more. By understanding how to create and process HTML forms, you can enhance the interactivity and functionality of your web applications. HTML forms are created using the <form> tag. Within the form, you can include various form elements such as text fields, checkboxes, radio buttons, dropdown lists, and buttons.",
+            "codeblock": "9ef5769722f9972628399e9b96be6d7f"
+        },
+        "p2": {
+            "text": "By default forms are submitted using the GET HTTP method. This means that the form data is appended to the URL in the form of a query string. For example, if you submit a form with a username and password field, the URL will look something like this: http://www.example.com/login?username=John&password=12345. You can set the form to use POST when submitted by using the method attribute on the <form> tag. This will send the form data in the body of the HTTP request instead of the URL. This is useful when you want to send sensitive data such as passwords.",
+            "codeblock": "1ec1fb5d9ee0be7167f638517703b9fc"
+        },
+        "p3": {
+            "text": "In the codes above when the submit button is clicked, the form data is sent to the same URL where it resides. To send the form data to a different URL, you can use the action attribute on the <form> tag. For example, if you want to send the form data to http://www.example.com/login, you can do so by adding action=\"http://www.example.com/login\" to the <form> tag.",
+            "codeblock": "9825e148e52f7c8bb3de7e6ccdc84253"
+        },
+        "p4": {
+            "text": "We have been talking about data for a while now, but where exactly do we get the data? The answer is from the form elements. Form elements are the building blocks of HTML forms. They are used to collect data from users and send it to the server for processing. There are many different types of form elements. Some of the most common ones are text fields, checkboxes, radio buttons, dropdown lists, and buttons. We would take a look at each of these in detail."
+        }
+    }
+}

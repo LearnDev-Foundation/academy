@@ -1,0 +1,48 @@
+{
+    "title": "HTML Page Structure",
+    "content": {
+        "p1": {
+            "text": "HTML is a markup language that uses a special syntax or notation to describe the structure of a webpage to the browser. HTML elements usually have opening and closing tags that surround and give meaning to content. For example, different elements can describe text as a heading, paragraph, or list item."
+        },
+        "p2": {
+            "text": "HTML Files are saved with the '.html' extension. HTML files can be created using a basic text editor, but there are also many apps available that offer more advanced features to make it easier to create web pages. Some popular HTML editors include Atom, Sublime Text, and Visual Studio Code. To run HTML files in a web browser, you basically just need to open the HTML file in your browser (like you would open any other file)."
+        },
+        "p3": {
+            "heading": "Doctype html",
+            "text": "The <!DOCTYPE html> declaration should always be the first line of code in your HTML files. This lets the browser know what version of HTML to expect. In this case, we are using HTML5.",
+            "codeblock": "9eddc85ea09e21c6cebb65df75a72145"
+        },
+        "p4": {
+            "heading": "html",
+            "text": "The <html> element will contain all of your HTML code. This is sometimes referred to as the root element because it is the parent of all the other elements in your page.",
+            "codeblock": "92018a73d222be1886c118516b86e8d9"
+        },
+        "p5": {
+            "text": "As seen above most tags come in pairs with an opening tag and a closing tag. The closing tag is written the same as the opening tag, but with a / "
+        },
+        "p6": {
+            "text": "There are a few self-closing tags, which means they don't need a separate closing tag as they don't contain anything in them. The html starting tag is used at the beginning of the document, right after the document type declaration. The html ending tag is the last thing present in an HTML document."
+        },
+        "p7": {
+            "text": "Inside the html element we have 2 elements: head and body. The head element contains information about the page that is not displayed directly in the web browser. This includes things like the page title, keywords, and CSS styles. The body element contains all the content that is displayed as part of the web page.",
+            "codeblock": "76f58d56336df9670d850bc7d62185ae"
+        },
+        "p8": {
+            "heading": "Tags and Elements",
+            "text": "HTML elements are the building blocks of HTML pages. An HTML element is defined by a start tag, some content, and an end tag. For example, <p>My first paragraph.</p> is a paragraph element. The <p> tag defines a paragraph. The opening <p> tag marks the beginning of the paragraph, and the closing </p> tag marks the end of the paragraph. The content inside the tags is the text that will be displayed."
+        },
+        "p9": {
+            "heading": "Attributes",
+            "text": "HTML elements can also have attributes that provide additional information about the element. Attributes are always specified in the start tag and usually consist of a name/value pair like: name=\"value\". The most common attribute is the id attribute, which is used to specify a unique id for an HTML element. The id attribute is used by CSS and JavaScript to style and manipulate the element with the specific id. The class attribute is used to specify a class for an HTML element. The class attribute is used by CSS and JavaScript to style and manipulate elements with the specific class. The style attribute is used to specify inline styles for an HTML element. The style attribute value must be enclosed in double quotes."
+        },
+        "p10": {
+            "heading": "Comments",
+            "text": "Comments are used to add notes to your code. Comments are not displayed in the browser. Comments are used to explain your code, which can help you when you edit the source code at a later date. Comments can also be used to prevent execution, when testing alternative code. Comments start with <!-- and end with -->.",
+            "codeblock": "a81cb79370a0d6a6c572388258dd972e"
+        },
+        "p11": {
+            "heading": "Notes",
+            "text": "HTML is not case sensitive. The <p> tag is the same as <P>. Though HTML isn't case sensitive there are conventions that need to be followed. It is best practice to use lowercase tag names. Attribute names should also be in lowercase. Attribute values should be enclosed in double quotes. The id attribute should be unique within a page. The class attribute can be used on multiple elements. The style attribute value should be enclosed in double quotes. The style attribute can contain multiple CSS property/value pairs. The style attribute should be used only when necessary. It is best practice to use CSS classes instead of the style attribute. The style attribute overrides any style set globally."
+        }
+    }
+}

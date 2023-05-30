@@ -35,7 +35,8 @@ const Chapters = () => {
 						const item = chapters[key];
 						return (
 							<li key={key}>
-								<Link to={`/learn/${item.title}`} state={{ data: item.file }}>{item.title}</Link>
+								<h4>{item.title}</h4>
+								<Link to={`/learn/${item.title}`} state={{ data: item.file }}>Go to Topic</Link>
 							</li>
 						);
 					})}

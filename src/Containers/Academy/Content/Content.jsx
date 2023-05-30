@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../../../Components";
+import { Navbar, Footer } from "../../../Components";
 import { Link, useLocation } from "react-router-dom";
 import Gist from "react-gist";
 
@@ -64,6 +64,7 @@ const Content = () => {
 						</ol>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		);
 	}

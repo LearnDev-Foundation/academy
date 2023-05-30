@@ -1,0 +1,74 @@
+{
+    "title": "Playing with Text",
+    "content": {
+        "p1": {
+            "heading": "The Heading Tags",
+            "text": "HTML Headings are used to define titles or subtitles that you want to display on a webpage. HTML Headings are defined with the <h1> to <h6> tags. <h1> defines the most important heading. <h6> defines the least important heading. Headings are very important for SEO purposes. Search engines use the headings to index the structure and content of your web pages. Users often skim a page by its headings. It is important to use headings to show the document structure. Try the codes below to see it in action",
+            "codeblock": "2b763ecf5dd822d0999a186657ebb832"
+        },
+        "p2": {
+            "heading": "Paragraphs",
+            "text": "The p tag is used to define a paragraph. Browsers automatically add some space (margin) before and after each <p> element. The margins can be modified with CSS (with the margin properties). The p tag is a block-level element. The p tag has a start tag and an end tag. The p tag allows you to create multi-line text. The text inside a p element is displayed in a block element with a line break before and after the paragraph. Try the codes below to see it in action",
+            "codeblock": "617a9692f5a9f84b7229b6bcf7f47700"
+        },
+        "p3": {
+            "text": "In the paragraph tag above we added a text know as lorem ipsum. \"Lorem ipsum\" is often used as a placeholder or dummy text within the content of a web page. When designing or developing a website, it is common to use temporary text to visualize the layout and overall design without having the final content available. Instead of leaving empty spaces or generic phrases like \"Content goes here,\" web designers and developers use \"Lorem ipsum\" as a stand-in text. It allows them to focus on the visual aspects of the page, such as fonts, typography, spacing, and overall composition, without being distracted by the actual content."
+        },
+        "p4": {
+            "heading": "The span tag",
+            "text": "The <span> tag is an inline HTML element that is used to apply styling and manipulate specific portions of text within a larger block of content. Unlike block-level elements such as <div> or <p>, the <span> tag does not create line breaks or structural changes in the layout. Instead, it is primarily used for targeting and applying styles to individual words, phrases, or small sections of text."
+        },
+        "p5": {
+            "text": "The <span> tag itself does not have any inherent styling or visual representation. Its main purpose is to provide a hook or container for CSS styles or JavaScript interactions. It is often used in conjunction with CSS classes or inline styles to customize the appearance or behavior of specific parts of the text. In the code below the style specified in the style attribute is applied to the text inside the span tag only.",
+            "codeblock": "96b6859d43c06a7b2febbc029aa519b6"
+        },
+        "p6": {
+            "heading": "The line break",
+            "text": "The <br /> tag represents a line break. It is an inline tag and it doesn't require a closing tag. An example of it's usage would be creating a new line inside a p tag without specifing a new paragraph, and compared to a new paragraph it doesn't require additional spacing. Try the code below to see it in action.",
+            "codeblock": "8b73759360035c8e2f08da6afeaa0abf"
+        },
+        "p7": {
+            "heading": "The strong tag",
+            "text": "This tag is used to mark the text inside it as important. The <strong> tag is often used to draw attention to a word or phrase. The <strong> tag is a phrase tag. The <strong> tag should not be used to define bold text; use the CSS font-weight property to create bold text. The <strong> tag is used to define text with strong importance. The content inside is typically displayed in bold. Try the code below to see it in action.",
+            "codeblock": "652ba32d88111771fc31879aa80a2510"
+        },
+        "p8": {
+            "heading": "The em tag",
+            "text": "The <em> tag is used to define emphasized text. The content inside is typically displayed in italic. The <em> tag is a phrase tag. The <em> tag should not be used to define important text. Use the <strong> tag to define important text. Try the code below to see it in action.",
+            "codeblock": "7829366e28350d387cd36878a88e25c8"
+        },
+        "p9": {
+            "heading": "Quotes",
+            "text": "The <q> tag defines a short quotation. Browsers normally insert quotation marks around the quotation. The <q> tag is used together with the cite attribute to indicate the source of the quotation. There is also a <blockquote> tag (block quotation) and it is used to define a section that is quoted from another source. Browsers usually indent <blockquote> elements. The <blockquote> element is used for longer quotes. Apart from the blockquote and the q tag there is also the <abbr> tag which is used to define an abbreviation or an acronym. The <abbr> tag is used to define an abbreviation or an acronym. We also have the <cite> tag which is used to define the title of a work. The <cite> tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.). The text in the <cite> element usually renders in italic. Try the code below to see it in action.",
+            "codeblock": "f59a019ec772e9113e1bbd8786cc5842"
+        },
+        "p10": {
+            "heading": "The horizontal line",
+            "text": "The <hr> tag defines a thematic break in an HTML page (e.g. a shift of topic). The <hr> element is used to separate content (or define a change) in an HTML page. The <hr> element is an empty element and it does not have a closing tag. The <hr> element is most often displayed as a horizontal rule in the browser, but it can also be displayed as a vertical rule or be positioned obliquely on the page. Try the code below to see it in action.",
+            "codeblock": "4c59986db8757fb3a830c705a80d6337"
+        },
+        "p11": {
+            "heading": "Links",
+            "text": "HTML links, created using the <a> (anchor) tag, are used to create hyperlinks that connect web pages together or link to external resources. Links play a crucial role in navigating the web and allow users to access different pages or sections within a website. The basic structure of an HTML link consists of the <a> tag with the href attribute, which specifies the destination URL. Here's an example:",
+            "codeblock": "3e7317ccdffb692fae5a60e968d7f0c6"
+        },
+        "p12": {
+            "text": "In the example above, the link text is \"Visit Example,\" and the href attribute specifies the destination URL, which in this case is \"https://www.example.com.\" When users click on the link, it will take them to the specified URL."
+        },
+        "p13": {
+            "text": "HTML links can also be used to navigate within the same web page by using anchor points. An anchor point is a specific location within a page that can be linked to. To create an anchor point, you can use the id attribute on an HTML element. Here's an example:",
+            "codeblock": "2b1a3f834a08e848cc75afb7753bea60"
+        },
+        "p14": {
+            "text": "To link to this anchor point within the same page, you can use the href attribute with a relative URL and include the anchor name preceded by a hash (#) symbol. For instance:",
+            "codeblock": "3831a7ba668fab587801a9ddfdda7bfd"
+        },
+        "p15": {
+            "text": "Clicking on this link will scroll the page to the section with the id of \"section1\". Additionally, HTML links can have additional attributes, such as target, to control how the link behaves. The target attribute specifies where the linked content should open. For example:",
+            "codeblock": "e9be61191a2645b5d95e4b1761f8fc18"
+        },
+        "p16": {
+            "text": "In this case, the target=\"_blank\" attribute value opens the linked content in a new browser tab. HTML links are an essential component of web development and allow users to navigate between web pages, sections within a page, and external resources with ease."
+        }
+    }
+}

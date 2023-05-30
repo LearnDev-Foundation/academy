@@ -1,0 +1,105 @@
+{
+    "title": "HTML Inputs",
+    "content": {
+        "p1": {
+            "text": "The input field is one of the most widely used form elements. It's also a very versatile element, and it can completely change behavior based on the type attribute. The default behavior is to be a single-line text input control",
+            "codeblock": "7e2b42f09c99967060bece7028441249"
+        },
+        "p2": {
+            "text": "The type attribute in the code above is used to control the type of input that the input field would take in. We would dicuss the different types of input fields in the next few sections. Another very important attribute that the input tag requires is the name attribute. The name attribute is used to identify the input field in the backend. The value of the name attribute is the name of the variable that would be used to store the value of the input field in the backend. The value of the input field can be accessed in the backend using the name attribute.",
+            "codeblock": "e7471c291a3a33a369c24c676ff5fb04"
+        },
+        "p3": {
+            "text": "Another very useful attribute to the input tag is the placeholder tag. The placeholder tag is used to display a hint to the user about the type of input that is expected in the input field. The placeholder text is displayed in a lighter color than the actual text that the user enters in the input field. The placeholder text disappears as soon as the user starts typing in the input field.",
+            "codeblock": "9b4a6120bcd0f1e62c6450b4471e074f"
+        },
+        "p4": {
+            "heading": "Email Input",
+            "text": "The email input field is used to take in email addresses. The email input field is very similar to the text input field. The only difference is that the email input field has a different type attribute. The type attribute for the email input field is email. The email input field also has a different keyboard layout on mobile devices. Using the email type enables client side validation for the form input to make sure it is an email.",
+            "codeblock": "6508c07adc0f3ccc1148f8cace3ff961"
+        },
+        "p5": {
+            "heading": "Password Input",
+            "text": "The password input field is used to take in passwords. The password input field is very similar to the text input field. The only difference is that the password input field has a different type attribute. The type attribute for the password input field is password. The default behavior of the password input field is to hide the text that the user enters in the input field. This is done to protect the password from being seen by other people.",
+            "codeblock": "dbad978d7a748e37346c5d0963e407bc"
+        },
+        "p6": {
+            "heading": "Number Input",
+            "text": "The number input field is used to take in numbers. The number input field is very similar to the text input field. The only difference is that the number input field has a different type attribute. The type attribute for the number input field is number. The number input field also has a different keyboard layout on mobile devices. With the number type input we can also specify the minimum and maximum values that the input field can take. This is done using the min and max attributes respectively. We can also specify the step size for the input field. This is done using the step attribute. The step attribute specifies the increment or decrement for the input field. For example the code below specifies an input field which accepts a value between 10 and 50, at steps of 5",
+            "codeblock": "007b42cf38482d448da968af01e16740"
+        },
+        "p7": {
+            "heading": "Hidden Fields",
+            "text": "Form fields can be hidden from the user using the hidden type attribute. The hidden type attribute is used to send data to the backend without the user knowing about it. The hidden type attribute is very useful when we want to send data to the backend without the user knowing about it. For example, we can use the hidden type attribute to send the user id of the user who is submitting the form to the backend. The hidden type attribute is also very useful when we want to send data to the backend which is not entered by the user. For example, we can use the hidden type attribute to send the current date and time to the backend.",
+            "codeblock": "f7c76a9d2d45dd20f7454baa918ad8b8"
+        },
+        "p8": {
+            "text": "In the code above we see the use of the value attribute. The value attribute is used to specify the default value of the input field. The value attribute is very useful when we want to specify a default value for the input field. For example, we can use the value attribute to specify the default value of the input field as the current date and time. The value attribute is also very useful when we want to specify a default value for the input field which is not entered by the user. For example, we can use the value attribute to specify the default value of the input field as the user id of the user who is submitting the form."
+        },
+        "p9": {
+            "heading": "Submit Input",
+            "text": "The type=\"submit\" field is a button that, once pressed by the user, submits the form. The submit button is used to submit the form to the backend. The value attribute of the submit button is used to specify the text that is displayed on the submit button. Below is an example of the submit button",
+            "codeblock": "a1ee4538c2d73cafce894ed080d75038"
+        },
+        "p10": {
+            "heading": "The required Attribute",
+            "text": "The required attribute is used to specify that the input field is required. The required attribute is very useful when we want to make sure that the user enters a value in the input field.",
+            "codeblock": "3fe66a34d64159cd42b2c9647bc72206"
+        },
+        "p11": {
+            "heading": "File Uploads",
+            "text": "You can load files from your local computer and send them to the server using a type=\"file\" input element",
+            "codeblock": "30d35e16b47dd154f730f4bb6cd4dfa4"
+        },
+        "p12": {
+            "text": "it is also possible to attach mulitple files",
+            "codeblock": "f827dd356252b91580c8109cb3399775"
+        },
+        "p13": {
+            "text": "You can specify one or more file types allowed using the accept attribute. The code below accepts images",
+            "codeblock": "8b4bfd44a98b67b08b78edad78082ac5"
+        },
+        "p14": {
+            "text": "You can use a specific MIME type, like application/json or set a file extension like .pdf . Or set multiple file extensions, like this",
+            "codeblock": "fc164eca018d94ebef35394e9933d6ea"
+        },
+        "p15": {
+            "heading": "Radio Buttons",
+            "text": "Radio buttons are a type of selection control in HTML forms that allow users to choose a single option from a predefined set of mutually exclusive options. They are often used when users need to select one option from a group of choices. Radio buttons are grouped together using the same name attribute. This ensures that only one option can be selected within the group. Options with the same name attribute form a mutually exclusive set."
+        },
+        "p16": {
+            "text": "Radio buttons are created using the <input> tag with the type attribute set to \"radio\". Each radio button option should have a unique value attribute to represent its selected value.  To associate a label with a radio button option, you can use the <label> tag. The for attribute of the <label> should match the id attribute of the corresponding radio button. You can preselect a radio button option by adding the checked attribute to the corresponding <input> tag. This makes it the default selected option when the page loads.",
+            "codeblock": "ca20a8c2ec6c9c00d00856bfa877c28d"
+        },
+        "p17": {
+            "text": "In the example above, three radio buttons are grouped together by assigning them the same name attribute (language). Each radio button has a unique id and a corresponding <label> element associated with it using the for attribute. When the form is submitted, the selected value will be sent to the server-side script specified in the form's action attribute."
+        },
+        "p18": {
+            "heading": "Checkboxes",
+            "text": "Checkboxes in HTML forms are selection controls that allow users to choose one or more options from a predefined set of choices. They are represented by a small box that can be checked or unchecked, indicating the selection status. Checkboxes are commonly used when users need to make multiple selections or indicate binary choices.",
+            "codeblock": "9b64454e1eb529247f17aeeb47f41347"
+        },
+        "p19": {
+            "text": "In this example, we have multiple checkboxes grouped together using the same name attribute (option). Users can select one or more options from \"Option 1\", \"Option 2\", and \"Option 3\"."
+        },
+        "p20": {
+            "text": "By changing the value of the type attribute in the input tag we can achieve various types of input such as: date, time, color, tel, url"
+        },
+        "p21": {
+            "heading": "The textarea tag",
+            "text": "The <textarea> tag in HTML is used to create a multi-line text input area where users can enter and edit larger blocks of text. It provides a user-friendly way to input and display longer textual content, such as comments, messages, descriptions, or other types of free-form text. The <textarea> tag is used to define the input area where users can enter text. Unlike single-line text inputs (<input type=\"text\">), <textarea> allows for multiple lines of text."
+        },
+        "p22": {
+            "text": "The <textarea> tag requires an opening and closing tag to enclose the desired default text or user-entered text. You can specify the size of the text area using the rows and cols attributes. The rows attribute defines the number of visible lines, while the cols attribute determines the width in terms of characters.  You can provide default text within the <textarea> tags, which is displayed as a placeholder or initial content for users to modify or delete.",
+            "codeblock": "c48000f25f1757893bb327bed87d290e"
+        },
+        "p23": {
+            "text": "In the example above, we have a <textarea> with four visible rows and a width of 40 characters. The placeholder attribute provides an optional text hint to guide users on what to input in the text area."
+        },
+        "p24": {
+            "heading": "The select tag",
+            "text": "The <select> tag in HTML is used to create a dropdown list of options that users can select from. It provides an intuitive way for users to select one option from a set of choices. The <option> tag is used to define the available options in the dropdown list. The <option> tag requires an opening and closing tag to enclose the option text. The value attribute of the <option> tag is used to specify the value of the option. This value is sent to the server when the form is submitted. If the value attribute is not specified, the content of the <option> tag will be sent to the server as the value. The selected attribute can be used to specify the default selected option when the page loads.",
+            "codeblock": "5640422fb2eec42eb129551d9854d7ee"
+        }
+    }
+}

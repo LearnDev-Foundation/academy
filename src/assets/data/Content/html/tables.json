@@ -1,0 +1,74 @@
+{
+    "title": "HTML Tables",
+    "content": {
+        "p1": {
+            "heading": "Table Structure",
+            "text": "An HTML table consists of several elements that work together to define its structure and content. Here's a breakdown of the main elements used in table structure:"
+        },
+        "p2": {
+            "text": "1. <table>: The <table> element is the main container for the entire table. It is used to define the start and end of the table."
+        },
+        "p3": {
+            "text": "2. <thead>: The <thead> element represents the table header section. It is used to group and contain the header content of the table."
+        },
+        "p4": {
+            "text": "3. <tbody>: The <tbody> element represents the table body section. It contains the main content or data of the table."
+        },
+        "p5": {
+            "text": "4. <tfoot>: The <tfoot> element represents the table footer section. It is used to group and contain the footer content of the table."
+        },
+        "p6": {
+            "text": "5. <tr>: The <tr> element stands for \"table row\" and is used to define a row within the table. Each row contains one or more table cells."
+        },
+        "p7": {
+            "text": "6. <th>: The <th> element stands for \"table header cell.\" It is used to define a header cell within a row. <th> elements are typically used in the <thead> section to label the columns."
+        },
+        "p8": {
+            "text": "7. <td>: The <td> element stands for \"table data cell.\" It is used to define a regular data cell within a row. <td> elements are used in the <tbody> and <tfoot> sections to display data."
+        },
+        "p9": {
+            "text": "It's important to note that the <thead>, <tbody>, and <tfoot> sections are optional. You can use them as needed based on the structure and content of your table. However, it is recommended to include them for better semantic organization and accessibility."
+        },
+        "p10": {
+            "heading": "Table Headers",
+            "text": "Table headers are defined using the <th> element. The <th> element is similar to the <td> element used for regular table data cells, but it is specifically used for table headers. Table headers are typically placed within the <thead> section of the table. The <thead> element acts as a container for the table header content. Each <th> element represents a column header in the table. It provides a label or description for that particular column."
+        },
+        "p11": {
+            "text": "The <th> element has an attribute called scope that helps assistive technologies understand the relationship between the header cell and the data cells it labels. The scope attribute can have two values: \"col\" (column) or \"row\" (row). For example, <th scope=\"col\">Column Header</th> indicates that the header is associated with a column. In some cases, you may need to use row headers instead of column headers. To create row headers, you can place <th> elements within a <th> element and use the scope attribute with the value \"row\". This helps establish the relationship between the row header and the data cells it labels."
+        },
+        "p12": {
+            "text": "Using table headers enhances the accessibility of the table, allowing screen readers and other assistive technologies to interpret and navigate the table more effectively. It also provides a clear visual indication of the table structure for sighted users."
+        },
+        "p13": {
+            "heading": "Table Body",
+            "text": "The table body is defined using the <tbody> element. It acts as a container for the rows and cells that make up the data of the table. The <tbody> element is placed within the <table> element, after the <thead> section if present. It can also appear before the <tfoot> section if you have a footer in your table."
+        },
+        "p14": {
+            "text": "The data in the table is organized into rows (<tr>) and cells (<td>). Each <tr> element represents a row in the table, and each <td> element represents a cell within that row. You can place the actual data or content of your table within the <td> elements in the table body. This can include text, numbers, images, links, or any other HTML content."
+        },
+        "p15": {
+            "text": "The table body can contain any number of rows and cells, depending on the data you want to present. You can dynamically generate the rows and cells using server-side programming languages like PHP or JavaScript. Remember to provide appropriate and meaningful data within the table body to ensure the content is understandable and useful to users."
+        },
+        "p16": {
+            "heading": "Table Footer",
+            "text": "The table footer, which is represented by the <tfoot> element. The table footer section is used to group and contain footer content within an HTML table. The <tfoot> element is placed within the <table> element, usually after the <tbody> section if present. It is used to define the footer content of the table. The <tfoot> section can contain one or more rows (<tr>) and cells (<td> or <th>) to represent the footer content. The footer content often includes summary information, totals, or additional notes related to the data in the table."
+        },
+        "p17": {
+            "text": "The footer content in the <tfoot> section is often displayed at the bottom of the table, separated from the table body. This helps visually distinguish it from the main content of the table. The structure and usage of rows (<tr>) and cells (<td> or <th>) within the <tfoot> section are similar to the table body. You can use the same HTML elements and attributes to represent the footer content. The <tfoot> section is not required for all tables, but it can be useful for providing summary information or additional notes related to the table data. It helps organize and present relevant information at the bottom of the table."
+        },
+        "p18": {
+            "heading": "Table Rows and Table Data",
+            "text": "A table row is represented by the <tr> element. It is used to define a row within the table. Rows act as containers for table cells (<td>) or table header cells (<th>).  Table rows are typically placed within the <tbody>, <thead>, or <tfoot> sections of the table, depending on where you want the rows to appear. Each row contains one or more table cells (<td>) or table header cells (<th>). The number of cells in a row should match the number of columns defined in the table's header (<thead>) section. Rows are ordered sequentially within the table. The order in which you define the rows determines the order in which they appear in the rendered table."
+        },
+        "p19": {
+            "text": "Table data cells are represented by the <td> element. They are used to define regular data cells within a row. Table data cells (<td>) are placed within table rows (<tr>) in the <tbody>, <thead>, or <tfoot> sections of the table. able data cells contain the actual data or content of the table, such as text, numbers, images, links, or any other HTML content. Unlike table header cells (<th>), table data cells do not have a scope attribute. They are implicitly associated with the columns and rows they belong to."
+        },
+        "p20": {
+            "text": "It's important to note that the number of cells in each row should match the number of columns defined in the table's header (<thead>) section. This ensures that the data is correctly aligned with the corresponding columns. Table rows and data cells are the building blocks of an HTML table. They allow you to organize and display tabular data in a structured manner. Try the example below to see html tables in action",
+            "codeblock": "60ad513b053dd190f7286395a31e832f"
+        },
+        "p21": {
+            "text": "In this example, we have a table with two columns: \"Product\" and \"Price\". The <thead> section contains a single row with two <th> elements representing the column headers. The <tbody> section contains three rows, each with two <td> elements representing the data cells. The <tfoot> section contains a single row with a <td> element that spans across two columns using the colspan attribute, displaying the total price."
+        }
+    }
+}

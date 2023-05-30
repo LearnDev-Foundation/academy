@@ -1,9 +1,0 @@
-{
-    "title": "Introduction to Html",
-    "content": {
-        "p1": {
-            "heading": "What is HTML?",
-            "text": "HTML stands for Hyper Text Markup Language. It is a language of World Wide Web. It is a standard text formatting language which is used to create and display pages on the Web. It makes the text more interactive and dynamic. It can turn text into images, tables, links."
-        }
-    }
-}

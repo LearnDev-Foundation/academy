@@ -4,23 +4,5 @@
         "slug": "html",
         "description": "Master the language used to create websites and develop a strong foundation in web development.",
         "chapterList": "html"
-    },
-    "css": {
-        "topic": "CSS",
-        "slug": "css",
-        "description": "Elevate your web design skills by learning CSS and creating visually stunning websites.",
-        "chapterList": "css"
-    },
-    "js": {
-        "topic": "JavaScript",
-        "slug": "javascript",
-        "description": "Take your web development skills to the next level by mastering JavaScript, the programming language behind the modern web.",
-        "chapterList": "javascript"
-    },
-    "py": {
-        "topic": "Python",
-        "slug": "python",
-        "description": "Join the world of programming by learning Python, a versatile and powerful language used for web development, data analysis, machine learning, and more.",
-        "chapterList": "python"
     }
 }

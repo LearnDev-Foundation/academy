@@ -1,0 +1,20 @@
+{
+    "title": "HTML Lists",
+    "content": {
+        "p1": {
+            "text": "In html we have three types of list: Ordered, Unordered and Definition lists. Unordered lists are made using the ul tag and each item in the list are made using the li tag",
+            "codeblock": "3b06a142ca7ad9b3b035e81fc05fb67d"
+        },
+        "p2": {
+            "text": "Ordered lists are similar to unordered lists except they are made using the ol in place of ul",
+            "codeblock": "745084bc8d94e44a2b268baae29375d1"
+        },
+        "p3": {
+            "text": "The major differnce between an ordered list and an unordered list is that while ordered list use numbers to identify list items, unordered list do not"
+        },
+        "p4": {
+            "text": "Definition lists are entirely different from oredered and unordered list because it doesn't use list items. Instead with definition lists we have the term (<dt>) and the definition (<dd>). Definition lists are very rarely used unlike ordered and unordered list",
+            "codeblock": "b89646c87f0351ef4144c6d1dc32d4c7"
+        }
+    }
+}

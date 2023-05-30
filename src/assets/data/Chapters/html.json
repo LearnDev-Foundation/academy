@@ -7,8 +7,44 @@
             "file": "html/introduction"
         },
         "2": {
-            "title": "HTML Basics",
-            "file": "html/basics"
+            "title": "HTML Page Structure",
+            "file": "html/page-structure"
+        },
+        "3": {
+            "title": "The Head Tag",
+            "file": "html/head"
+        },
+        "4": {
+            "title": "The HTML Body",
+            "file": "html/body"
+        },
+        "5": {
+            "title": "Playing With Text",
+            "file": "html/text"
+        },
+        "6": {
+            "title": "HTML Lists",
+            "file": "html/lists"
+        },
+        "7": {
+            "title": "Container Tags",
+            "file": "html/containers"
+        },
+        "8": {
+            "title": "Page Structure Tags",
+            "file": "html/structure"
+        },
+        "9": {
+            "title": "HTML Forms",
+            "file": "html/forms"
+        },
+        "10": {
+            "title": "HTML Inputs",
+            "file": "html/inputs"
+        },
+        "11": {
+            "title": "HTML Tables",
+            "file": "html/tables"
         }
     }
 }

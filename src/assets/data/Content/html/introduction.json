@@ -6,8 +6,19 @@
             "text": "HTML stands for Hyper Text Markup Language. It is a language of World Wide Web. It is a standard text formatting language which is used to create and display pages on the Web. It makes the text more interactive and dynamic. It can turn text into images, tables, links."
         },
         "p2": {
-            "heading": "A sample html document",
-            "codeblock": "9eddc85ea09e21c6cebb65df75a72145"
+            "text": "HTML (Hypertext Markup Language) uses a markup system composed of elements which represent specific content. Markup means that with HTML you declare what is presented to a viewer, not how it is presented. Visual representations are defined by Cascading Style Sheets (CSS) and realized by browsers."
+        },
+        "p3": {
+            "text": "HTML is sometimes called a programming language but it has no logic, so is a markup language. HTML tags provide semantic meaning and machine-readability to the content in the page."
+        },
+        "p4": {
+            "text": "An element usually consists of an opening tag (<element_name>), a closing tag (</element_name>), which contain the element’s name surrounded by angle brackets, and the content in between: <element_name>...content...</element_name>"
+        },
+        "p5": {
+            "text": "A few HTML do not contain opening and closing tags. These elements are know as void elements. Void elements are closed by a single tag: <element_name />. Void elements are used to insert images, line breaks, meta information, etc."
+        },
+        "p6": {
+            "text": "Element names can be thought of as descriptive keywords for the content they contain, such as <h1> for a top-level heading, <p> for a paragraph, <img> for an image, <li> for a list item. The element name is always the first part of the tag."
         }
     }
 }

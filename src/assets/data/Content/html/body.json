@@ -1,0 +1,23 @@
+{
+    "title": "The HTML Body",
+    "content": {
+        "p1": {
+            "text": "The HTML <body> element represents the content of an HTML document. There can be only one <body> element in a document. It contains all the contents of an HTML document, such as text, hyperlinks, images, tables, lists, etc. After the closing head tga we can only have one thing in an html document and that is the body tag.",
+            "codeblock": "8ce65f8f22996f413b930bee7ebbb05c"
+        },
+        "p2": {
+            "text": "There are a variety of tags that can be used inside of the body tag. We will cover some of them in chapters to come, but first we need to understand a few basic concepts."
+        },
+        "p3": {
+            "heading": "Block and Inline Elements",
+            "text": "Elements used inside the body tag are generally divided into two categories. The first is block elements. Block elements take up the entire width of the page and are stacked on top of each other. Examples of Block elements include p, div, and the heading tags (h1 to h6). The second is inline elements. Inline elements only take up as much space as they need and are placed next to each other. Examples of Inline Elements include span, a, and img. We will cover these elements in more detail in the chapters to come."
+        },
+        "p4": {
+            "text": "Block elements can contain other block elements and inline elements. Inline elements can only contain other inline elements. It is very important to remember this as it will help you avoid errors in your code."
+        },
+        "p5": {
+            "heading": "Semantic HTML",
+            "text": "Semantic means \"relating to meaning\". Writing semantic HTML means using HTML elements to structure your content based on each element's meaning, not its appearance. Though we havn't touched many html tags yet, let us compare the div tag to the section tag. Both tags are block elements and can contain other block elements and inline elements. However, the section tag is a semantic tag. It is used to define a section in a document. The div tag is a non-semantic tag. It is used to group elements for styling purposes. It is important to use semantic tags as it makes your code easier to read and understand. It also helps search engines understand your content better."
+        }
+    }
+}

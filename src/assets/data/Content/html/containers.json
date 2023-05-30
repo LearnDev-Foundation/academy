@@ -1,0 +1,32 @@
+{
+    "title": "Container Tags",
+    "content": {
+        "p1": {
+            "text": "Container tags are used to define a section in a document. They are used to group blocks of content such as paragraphs or lists. Container tags are also called block-level tags. They are used to create a block of content. The following are some of the container tags: <div>, <section>, <article>"
+        },
+        "p2": {
+            "heading": "The <div> Tag",
+            "text": "The <div> tag in HTML is a versatile container element used to group and organize other HTML elements. It is a block-level element that does not have any inherent semantic meaning. Instead, its purpose is to provide a way to logically structure and style sections of a web page.",
+            "codeblock": "86bfdaa841d58be96cb8b132ba0f6711"
+        },
+        "p3": {
+            "text": "In the example above, a <div> element with the class \"container\" is used to group the heading and paragraph elements together. This allows you to apply specific styling or perform operations on the entire block of content within the <div>. Overall, the <div> tag is a fundamental and versatile element in HTML, providing a way to structure, style, and manipulate sections of a web page. It is commonly used in conjunction with CSS and scripting to create visually appealing and interactive web experiences."
+        },
+        "p4": {
+            "heading": "The <section> Tag",
+            "text": "The <section> tag in HTML is used to define a standalone section or a thematic grouping of content within a web page. It helps to organize and structure the content by grouping related elements together, providing clarity and improving the semantic structure of the document.",
+            "codeblock": "5af21100fdb47c60a82a836637d4f612"
+        },
+        "p5": {
+            "text": "In the example above, the <section> tag is used to group the heading (<h2>) and paragraph (<p>) elements that provide information about the company. It signifies that these elements are part of the \"About Us\" section. The <section> tag helps improve the structure, organization, and semantics of a web page. It aids in creating more meaningful and accessible content while allowing for easier styling and maintenance of the web page layout."
+        },
+        "p6": {
+            "heading": "The <article> Tag",
+            "text": "The <article> tag in HTML is used to mark up a self-contained, independent piece of content that can be distributed or syndicated on its own. It represents a complete, stand-alone composition that could be a blog post, a news article, a forum post, or any other similar content.",
+            "codeblock": "57d36e97e6f972fb893deb72a9d18e15"
+        },
+        "p7": {
+            "text": "In the example above, the <article> tag is used to encapsulate a complete article, including the heading (<h2>) and multiple paragraphs (<p>). The <article> tag helps to structure and mark up self-contained content within a web page, providing semantic meaning and improving document outline and accessibility."
+        }
+    }
+}
