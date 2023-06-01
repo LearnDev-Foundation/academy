@@ -1,0 +1,30 @@
+{
+    "title": "Accessibility",
+    "content": {
+        "p1": {
+            "text": "It's important we design our HTML with accessibility in mind. Having accessible HTML means that people with disabilities can use the Web. There are totally blind or visually impaired users, people with hearing loss issues and a multitude of other different disabilities."
+        },
+        "p2": {
+            "text": "What if a person can't see your page, but still wants to consume its content? First, how do they do that? They can't use the mouse, they use something called a screen reader. You don't have to imagine that. You can try one now: Google provides the free ChromeVox Chrome Extension. Accessibility must also take care of allowing tools to easily select elements or navigate through the pages."
+        },
+        "p3": {
+            "text": "Web pages and Web apps are not always built with accessibility as one of their first goals, and maybe version 1 is released not accessible but it's possible to make a web page accessible after the fact. Sooner is better, but it's never too late. What exactly does it mean to make an HTML accessible?"
+        },
+        "p4": {
+            "heading": "Use Semantic HTML",
+            "text": "Semantic HTML is very important and it's one of the main things you need to take care of. Let me illustrate a few common scenarios. It's important to use the correct structure for heading tags. The most important is h1 , and you use higher numbers for less important ones, but all the same-level headings should have the same meaning (think about it like a tree structure)"
+        },
+        "p5": {
+            "text": "Use strong and em instead of b and i . Visually they look the same, but the first 2 have more meaning associated with them. b and i are more visual elements. Lists are important. A screen reader can detect a list and provide an overview, then let the user choose to get into the list or not. Also a table should have a caption tag that describes it's content.",
+            "codeblock": ""
+        },
+        "p6": {
+            "heading": "Use the alt attribute in images",
+            "text": "All images must have an alt tag describing the image content. It's not just a good practice, it's required by the HTML standard and your HTML without it is not validated. It's also good for search engine optimization."
+        },
+        "p7": {
+            "heading": "Use the aria attribute",
+            "text": "ARIA is an acronym that means Accessible Rich Internet Applications and defines semantics that can be applied to elements. There are many types of aria attributes, a few of them include: aria-label, aria-labelledby, aria-describedby, aria-hidden. All of them serve different purposes on the HTML page."
+        }
+    }
+}

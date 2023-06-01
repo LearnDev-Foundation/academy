@@ -1,0 +1,54 @@
+{
+    "title": "HTML Media",
+    "content": {
+        "p1": {
+            "text": "In HTML audio and video files can be rendered using the <audio> and <video> tag. Lets look at each of them in details"
+        },
+        "p2": {
+            "heading": "The <audio> tag",
+            "text": "The audio tag allows you to embed audio files inside of your HTML content. This element can stream audio, maybe using a microphone via getUserMedia()[Javascript] , or it can play an audio source which you reference using the src attribute",
+            "codeblock": "0e1bd09decd445bcd3d70046e2b86eb7"
+        },
+        "p3": {
+            "text": "By default the browser does not show any controls for this element. Which means the audio will play only if set to autoplay and the user can't see how to stop it or control the volume or move through the track. To show built in controls, you can add the 'controls' attribute",
+            "codeblock": "20f468d551bfcd19f8bb2c6d7e6dc74c"
+        },
+        "p4": {
+            "text": "By default audio files do not play automatically. To enable audio files to play automatically we can add the 'autoplay' attribute",
+            "codeblock": "2750da8ccb20ada9798f1472ba2719b7"
+        },
+        "p5": {
+            "text": "The loop attribute restarts the audio playing at 0:00 if set; otherwise, if not present, the audio stops at the end of the file",
+            "codeblock": "5d969d043122b54bb85db58e9a5e9e34"
+        },
+        "p6": {
+            "text": "This are just a few of the basic attributes that can be used with the audio tag. Using JavaScript we can listen for various events happening on an audio elemnt. Some of the basic ones are: play, pause, playing, ended."
+        },
+        "p7": {
+            "heading": "The <video> tag",
+            "text": "This tag allows you to embed video content in your HTML pages. This element can stream video, using a webcam via getUserMedia()or WebRTC, or it can play a video source which you reference using the src attribute",
+            "codeblock": "761e1c563b92f4094859160757d2534c"
+        },
+        "p8": {
+            "text": "Like the audio tag the video tag doesn't show controls by default, doesn't automatically play and can also be looped. To do all of these we also use the same attributes as the audio tag which are, autoplay to automatically play files, controls to show the video controls and loop to replay the video everytime it ends. In addition to all these we can also set a poster image for the video file using the poster attribute",
+            "codeblock": "14b582d8afb1bf143785ccb5925785aa"
+        },
+        "p9": {
+            "heading": "The <img> tag",
+            "text": "In addition to audio and video tags, we can also display images inside of our html pages. Images are added to web pages using the <img> tag. The image tag is a self closing tag (It doesn't require a closing tag) and it takes in the src(source) attribute which is the location of the image either on the web or the link to a file.",
+            "codeblock": "9f2fea0e05a8d9e0e5dddf8521926695"
+        },
+        "p10": {
+            "text": "The image tag has support for a wide range of images. The common ones include, PNG, JPEG, GIF and SVG. By standard html requires an alternative text which is represented by the alt attribute. This alt text is used by screen readers and search engine bots to describe the image.",
+            "codeblock": "cc914bd49ee784d24f06a60b437b4142"
+        },
+        "p11": {
+            "text": "You can set the width and height attributes to set the space that the element will take, so that the browser can account for it and it does not change the layout when it's fully loaded. It takes a numeric value, expressed in pixels.",
+            "codeblock": "d7a2db1c95b9c3ccd7c412a0d0c3d358"
+        },
+        "p12": {
+            "text": "Along with the <img> tag for images we also have the <figure> tag. The figure tag is often used along with the img tag. <figure> is a semantic tag often used when you want to display an image with a caption. To show the caption we use the <figcaption> tag.",
+            "codeblock": "90b1ab86d8534f6c51b20937581b3278"
+        }
+    }
+}

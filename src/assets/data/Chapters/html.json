@@ -45,6 +45,14 @@
         "11": {
             "title": "HTML Tables",
             "file": "html/tables"
+        },
+        "12": {
+            "title": "HTML Media",
+            "file": "html/media"
+        },
+        "13": {
+            "title": "Accessibility",
+            "file": "html/accessibility"
         }
     }
 }
